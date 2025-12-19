@@ -7,7 +7,7 @@ import (
 )
 
 type Handler struct {
-	svc        *task.Service
+	svc        *task.
 	userClient userpb.UserServiceClient
 	taskpb.UnimplementedTaskServiceServer
 }
