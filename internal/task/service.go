@@ -18,8 +18,7 @@ func (s *Service) GetTask(id int64) (*Task, error) {
 
 func (s *Service) CreateTask(task *Task) (*Task, error) {
 	tsk := Task{
-		Task:   task.Task,
-		Status: task.Status,
+		Title:  task.Title,
 		UserID: task.UserID,
 	}
 
@@ -36,8 +35,7 @@ func (s *Service) UpdateTask(id int64, task *Task) (*Task, error) {
 		return &Task{}, err
 	}
 
-	tsk.Task = task.Task
-	tsk.Status = task.Status
+	tsk.Title = task.Title
 
 	if err := s.repo.UpdateTask(tsk); err != nil {
 		return &Task{}, err
